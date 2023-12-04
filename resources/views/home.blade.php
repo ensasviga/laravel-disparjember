@@ -1,6 +1,7 @@
 @php
     $hastag = get_setting_value('_hastag');
     $text = get_article_data ('TEXT');
+    $textpict = get_aboutjember_data ('TEXTPICT');
 @endphp
 
 <!DOCTYPE html>
@@ -54,7 +55,7 @@
             <div class="row">
                 <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <p><i class="fa fa-envelope mr-2"></i>{{ $text->title }}</p>
+                        <p><i class="fa fa-envelope mr-2"></i></p>
                         <p class="text-body px-3">|</p>
                         <p><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</p>
                     </div>
@@ -170,23 +171,23 @@
             <div class="row">
                 <div class="col-lg-6" style="min-height: 500px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="img/about.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="{{ Storage::url($textpict->thumbnail2) }}" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
                     <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
-                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About JEMBER</h6>
-                        <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
-                        <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
+                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">{{$textpict->title}}</h6>
+                        <h2 class="mb-3">{{$hastag}}</h2>
+                        <p>{!! strip_tags($textpict->content) !!}</p>
                         <div class="row mb-4">
                             <div class="col-6">
-                                <img class="img-fluid" src="img/about-1.jpg" alt="">
+                                <img class="img-fluid" src="{{ Storage::url($textpict->thumbnail1) }}" alt="">
                             </div>
                             <div class="col-6">
-                                <img class="img-fluid" src="img/about-2.jpg" alt="">
+                                <img class="img-fluid" src="{{ Storage::url($textpict->thumbnail3) }}" alt="">
                             </div>
                         </div>
-                        <a href="" class="btn btn-primary mt-1">Book Now</a>
+                        <a href="" class="btn btn-primary mt-1">Detail</a>
                     </div>
                 </div>
             </div>
@@ -196,45 +197,7 @@
 
 
     <!-- Feature Start -->
-    <div class="container-fluid pb-5">
-        <div class="container pb-5">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="d-flex mb-4 mb-lg-0">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3" style="height: 100px; width: 100px;">
-                            <i class="fa fa-2x fa-money-check-alt text-white"></i>
-                        </div>
-                        <div class="d-flex flex-column">
-                            <h5 class="">Competitive Pricing</h5>
-                            <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="d-flex mb-4 mb-lg-0">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3" style="height: 100px; width: 100px;">
-                            <i class="fa fa-2x fa-award text-white"></i>
-                        </div>
-                        <div class="d-flex flex-column">
-                            <h5 class="">Best Services</h5>
-                            <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="d-flex mb-4 mb-lg-0">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-primary mr-3" style="height: 100px; width: 100px;">
-                            <i class="fa fa-2x fa-globe text-white"></i>
-                        </div>
-                        <div class="d-flex flex-column">
-                            <h5 class="">Worldwide Coverage</h5>
-                            <p class="m-0">Magna sit magna dolor duo dolor labore rebum amet elitr est diam sea</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Feature End -->
 
 
@@ -248,10 +211,9 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="destination-item position-relative overflow-hidden mb-2">
-                        <img class="img-fluid" src="img/destination-1.jpg" alt="">
+                        <img class="img-fluid" src="{{ Storage::url($text->thumbnail) }}" alt="">
                         <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">United States</h5>
-                            <span>100 Cities</span>
+                            <h5 class="text-white">{{ $text->title }}</h5>
                         </a>
                     </div>
                 </div>
@@ -259,7 +221,7 @@
                     <div class="destination-item position-relative overflow-hidden mb-2">
                         <img class="img-fluid" src="img/destination-2.jpg" alt="">
                         <a class="destination-overlay text-white text-decoration-none" href="">
-                            <h5 class="text-white">United Kingdom</h5>
+                            <h5 class="text-white">{{ $text->title }}</h5>
                             <span>100 Cities</span>
                         </a>
                     </div>
