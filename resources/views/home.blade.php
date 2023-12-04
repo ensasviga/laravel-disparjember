@@ -1,9 +1,14 @@
+@php
+    $hastag = get_setting_value('_hastag');
+    $text = get_article_data ('TEXT');
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>TRAVELER - Free Travel Website Template</title>
+    <title>{{$hastag}}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
@@ -49,7 +54,7 @@
             <div class="row">
                 <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
                     <div class="d-inline-flex align-items-center">
-                        <p><i class="fa fa-envelope mr-2"></i>info@example.com</p>
+                        <p><i class="fa fa-envelope mr-2"></i>{{ $text->title }}</p>
                         <p class="text-body px-3">|</p>
                         <p><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</p>
                     </div>
@@ -84,7 +89,7 @@
         <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
             <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
                 <a href="" class="navbar-brand">
-                    <h1 class="m-0 text-primary"><span class="text-dark">TRAVEL</span>ER</h1>
+                    <h1 class="m-0 text-primary"><span class="text-dark">TRAVEL</span>JEMBER</h1>
                 </a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
@@ -155,55 +160,7 @@
 
 
     <!-- Booking Start -->
-    <div class="container-fluid booking mt-5 pb-5">
-        <div class="container pb-5">
-            <div class="bg-light shadow" style="padding: 30px;">
-                <div class="row align-items-center" style="min-height: 60px;">
-                    <div class="col-md-10">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Destination</option>
-                                        <option value="1">Destination 1</option>
-                                        <option value="2">Destination 1</option>
-                                        <option value="3">Destination 1</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Depart Date" data-target="#date1" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <div class="date" id="date2" data-target-input="nearest">
-                                        <input type="text" class="form-control p-4 datetimepicker-input" placeholder="Return Date" data-target="#date2" data-toggle="datetimepicker"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="mb-3 mb-md-0">
-                                    <select class="custom-select px-4" style="height: 47px;">
-                                        <option selected>Duration</option>
-                                        <option value="1">Duration 1</option>
-                                        <option value="2">Duration 1</option>
-                                        <option value="3">Duration 1</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-2">
-                        <button class="btn btn-primary btn-block" type="submit" style="height: 47px; margin-top: -2px;">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- Booking End -->
 
 
@@ -218,7 +175,7 @@
                 </div>
                 <div class="col-lg-6 pt-5 pb-lg-5">
                     <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
-                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About Us</h6>
+                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">About JEMBER</h6>
                         <h1 class="mb-3">We Provide Best Tour Packages In Your Budget</h1>
                         <p>Dolores lorem lorem ipsum sit et ipsum. Sadip sea amet diam dolore sed et. Sit rebum labore sit sit ut vero no sit. Et elitr stet dolor sed sit et sed ipsum et kasd ut. Erat duo eos et erat sed diam duo</p>
                         <div class="row mb-4">
