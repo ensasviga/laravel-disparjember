@@ -527,7 +527,8 @@ mark,
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 200px;
 }
 
 .img-thumbnail {
@@ -9638,6 +9639,7 @@ h6,
 
 .package-item {
   transition: .5s;
+  height: 345px;
 }
 
 .package-item:hover {
@@ -9645,7 +9647,7 @@ h6,
 }
 
 .bg-registration {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/carousel-1.jpg), no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/DJI_0633.JPG), no-repeat center center;
   background-size: cover;
 }
 
